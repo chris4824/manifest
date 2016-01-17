@@ -7,6 +7,13 @@
            fetch="git://github.com/"
            review="https://review.slimroms.org/"/>
 
+  <remote  name="vo"
+           fetch="https://github.com/ValidusOs"
+           revision="mm6.0" />
+
+  <remote name="bb"
+           fetch="https://bitbucket.org/" />
+
   <remote  name="aospb"
            fetch="https://github.com/AOSPB"
            revision="mm6.0" />
@@ -15,9 +22,19 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="build" remote="aospb" >
+  <!-- Validus repos -->
+  <project path="build" name="build" remote="vo" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
+  <project path="frameworks/base" name="frameworks_base" remote="vo" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="vo" />
+  <project path="vendor/validus" name="vendor_validus" remote="vo" />
+
+  <!-- Validus Additions  -->
+  <project path="packages/apps/Snap" name="CyanogenMod/android_packages_apps_Snap" remote="github" revision="cm-13.0" />
+  <project path="packages/apps/LockClock" name="CyanogenMod/android_packages_apps_LockClock" remote="github" revision="cm-13.0" />
+  <project path="external/google" name="CyanogenMod/android_external_google" remote="github" revision="cm-13.0" />
+
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="art" remote="aospb"  />
   <project path="bionic" name="bionic" remote="aospb" />
@@ -268,7 +285,6 @@
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/av" name="frameworks_av" remote="aospb" />
-  <project path="frameworks/base" name="frameworks_base" remote="aospb" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -399,7 +415,6 @@
   <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="aospb" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="aospb" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" groups="pdk-fs" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
@@ -496,10 +511,7 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
 
-  <project path="manifest" name="manifest" remote="aospb" />
-
-  <!-- New Additions for slim -->
-  <project path="vendor/aospb" name="vendor_aospb" remote="aospb" />
+  <project path="manifest" name="manifest" remote="vo" />
 
   <!-- CAF repos -->
   <project path="vendor/qcom/opensource/display-frameworks" name="vendor_qcom_opensource_display-frameworks" remote="aospb" />
@@ -517,5 +529,13 @@
   <!-- ffmpeg -->
   <project path="external/ffmpeg" name="external_ffmpeg" remote="aospb" />
   <project path="external/stagefright-plugins" name="external_stagefright-plugins" remote="aospb" />
+
+    <!-- Uber Toolchains -->
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" name="UBERTC/arm-eabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.2-uber" name="UBERTC/arm-eabi-5.2" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" name="UBERTC/arm-linux-androideabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.2-uber" name="UBERTC/arm-linux-androideabi-5.2" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="UBERTC/aarch64-linux-android-4.9-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.2-kernel" name="UBERTC/aarch64-linux-android-5.2-kernel" remote="bb" revision="master" />
 
 </manifest>
