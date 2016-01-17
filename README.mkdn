@@ -1,21 +1,14 @@
-Welcome to AOSPB
+Welcome to Validus
 ===================
 
 
 Getting Started
 ---------------
 
-To get started with AOSPB, you'll need to get familiar with
-[Git and Repo](http://source.android.com/download/using-repo).
-
-Please take note that we have two main line branches depending on
-which hardware base your phone is working.
-
 To initialize your local repository using the AOSPB trees, use this command:
 
 
-	repo init -u git://github.com/AOSPB/manifest.git -b mm6.0
-
+	repo init -u git://github.com/ValidusOs/manifest.git -b mm6.0
 
 
 Then sync up with this command:
