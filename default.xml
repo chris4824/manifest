@@ -27,7 +27,8 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="bionic" name="bionic" remote="vo" /> 
-  <project path="external/sepolicy" name="external_sepolicy" remote="vo" />  
+  <project path="external/busybox" name="platform_external_busybox" remote="vo" />  
+  <project path="external/sepolicy" name="external_sepolicy" remote="vo" />
   <project path="frameworks/base" name="frameworks_base" remote="vo" />
   <project path="frameworks/native" name="frameworks_native" remote="vo" />  
   <project path="packages/apps/Settings" name="packages_apps_Settings" remote="vo" />
