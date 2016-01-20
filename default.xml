@@ -26,6 +26,7 @@
   <project path="build" name="build" remote="vo" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
+  <project path="art" name="art" remote="vo"  />
   <project path="bionic" name="bionic" remote="vo" /> 
   <project path="external/busybox" name="external_busybox" remote="vo" />  
   <project path="external/sepolicy" name="external_sepolicy" remote="vo" />
@@ -40,11 +41,9 @@
   <project path="packages/apps/LockClock" name="CyanogenMod/android_packages_apps_LockClock" remote="github" revision="cm-13.0" />
   <project path="external/google" name="CyanogenMod/android_external_google" remote="github" revision="cm-13.0" />
   <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="vo" />
-  <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="vo" />  
-
+  <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="vo" /> 
 
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
-  <project path="art" name="art" remote="aospb"  />
   <project path="bootable/recovery" name="bootable_recovery" remote="aospb" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
